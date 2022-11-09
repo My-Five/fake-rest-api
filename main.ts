@@ -57,4 +57,4 @@ let posts = createPosts(10);
 
 let dataObj = { users, posts };
 
-fs.writeFileSync('data.json', JSON.stringify(dataObj, null, '\t'));
+fs.writeFileSync('db.json', JSON.stringify(dataObj, null, '\t'));

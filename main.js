@@ -43,4 +43,4 @@ function createPosts(x) {
 var users = createUsers(10);
 var posts = createPosts(10);
 var dataObj = { users: users, posts: posts };
-fs.writeFileSync('data.json', JSON.stringify(dataObj, null, '\t'));
+fs.writeFileSync('db.json', JSON.stringify(dataObj, null, '\t'));

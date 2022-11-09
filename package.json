@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -16,6 +17,9 @@
     "url": "https://github.com/My-Five/json/issues"
   },
   "homepage": "https://github.com/My-Five/json#readme",
+  "dependencies": {
+    "json-server": "^0.17.0"
+  },
   "devDependencies": {
     "@faker-js/faker": "^7.6.0",
     "@types/node": "^18.11.9"
