@@ -17,6 +17,6 @@
   },
   "devDependencies": {
     "@faker-js/faker": "^7.6.0",
-    "javascript-time-ago": "^2.5.9",
+    "javascript-time-ago": "^2.5.9"
   }
 }
