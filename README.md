@@ -4,6 +4,18 @@
 tsc main.ts && node main.js
 ```
 
-## Notes
+## Two Phases
 
-The debate is whether to use a simple mocking server where you define what the resulting JSON shape will look like or to mock the data and load it into a mocking database and use the actual API server. The former is faster to get to working. But if it's not a lot of extra work, it could be nice to instead load the fake data into a database. The only problem I can see is with database joins. That will take more work to get going. Another option is to use both methods. Have the mocking script create db.json, and enter fake data into the mock database.
+The way I prefer to mock for full stack development is to split API design into two phases: [json-server](https://github.com/typicode/json-server) and actual API.
+
+## Phase 1
+
+The goal is to do UI first development. That means the least amount of friction to get mock data over the wire the better. And the best solution for that is to load fake JSON data into json-server. By doing it this way, we don't have to mess with database fields, joins, API development, etc. We can just roughly describe our data and get going.
+
+### Local and Online
+
+We can run the mock data locally, but then it's good to get it online (usually Heroku), so that we can test it on devices easily, and send it to others for testing.
+
+## Phase 2
+
+Once you have a good idea of what your data is going to look like, you can start to lock it in. This is where you turn to building the models in the actual API. Once the models are built and the databases are set up, we can enter fake data into the test database. This way we can slowly change the API calls in the client from json-server to the real deal.
