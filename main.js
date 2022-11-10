@@ -1,14 +1,26 @@
 import { faker } from '@faker-js/faker';
+import TimeAgo from 'javascript-time-ago'
+import en from 'javascript-time-ago/locale/en'
 
 import * as fs from 'fs';
+
+TimeAgo.addDefaultLocale(en)
+const timeAgo = new TimeAgo('en-US')
 
 function randomDate() {
     const start = new Date(2021, 0, 1);
     const end = new Date();
     const randomDate = new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
     return randomDate.toISOString()
-     
-  }
+}
+
+function randomTimeAgo(days) {
+    var start = new Date();
+    start.setDate(start.getDate() - days);
+    const end = new Date();
+    const randomDate = new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
+    return timeAgo.format(randomDate, 'mini')
+}
   
 
 function createLink(id) {
@@ -62,7 +74,7 @@ function createPost(id) {
         user: createUserBrief(55),
         body: faker.lorem.paragraph(),
         createdAt: randomDate(),
-        timeAgo: "blue",
+        timeAgo: randomTimeAgo(3),
         postType: faker.datatype.number({ min: 0, max: 4 }),
         numLikes: faker.datatype.number({ max: 100 }),
         numReplies: faker.datatype.number({ max: 100 }),
