@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "type": "commonjs",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/My-Five/json#readme",
   "dependencies": {
+    "javascript-time-ago": "^2.5.9",
     "json-server": "^0.17.0"
   },
   "devDependencies": {
