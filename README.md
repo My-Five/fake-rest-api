@@ -16,6 +16,12 @@ The goal is to do UI first development. That means the least amount of friction 
 
 We can run the mock data locally, but then it's good to get it online (usually Heroku), so that we can test it on devices easily, and send it to others for testing.
 
+#### Local
+
+```
+json-server --watch --port 3004 main.js
+```
+
 ## Phase 2
 
 Once you have a good idea of what your data is going to look like, you can start to lock it in. This is where you turn to building the models in the actual API. Once the models are built and the databases are set up, we can enter fake data into the test database. This way we can slowly change the API calls in the client from json-server to the real deal.
